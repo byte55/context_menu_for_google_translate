@@ -1,0 +1,29 @@
+{
+  "name": "Context Menu for translate.google.com",
+  "short_name": "Translate",
+  "version": "1.0.0.0",
+  "manifest_version": 2,
+  "description": "Creates a context menu option to translate selcted texts to a specified language",
+  "icons": {
+    "16": "trans_16.png",
+    "64": "trans_64.png",
+    "128": "trans_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches":
+	  [
+		  "http://*/*", "https://*/*"
+	  ],
+	  "js": ["background.js"]
+    }
+  ], 
+  "options_page": "options.html",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions":[
+    "http://*/*", "https://*/*",
+    "storage","contextMenus"
+  ]
+}
